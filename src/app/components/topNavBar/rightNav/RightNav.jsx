@@ -16,7 +16,7 @@ const RightNav = (props) => {
                 <MenuButton
                   key={'menuButton-' + menuIndex}
                   label={menu.label}
-                  buttonLink={menu.buttonLink}
+                  buttonLink={menu.buttonLink ? menu.buttonLink : ''}
                   onMenuClick={menu.onButtonClick}
                 />
               );

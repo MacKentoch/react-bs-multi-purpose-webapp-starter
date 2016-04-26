@@ -9,7 +9,7 @@ const MenuButton = (props) => {
   if (props.onMenuClick) {
     return (
       <Link
-        to={props.buttonLink}
+        to="/"
         onClick={props.onMenuClick}>
         {props.label}
       </Link>

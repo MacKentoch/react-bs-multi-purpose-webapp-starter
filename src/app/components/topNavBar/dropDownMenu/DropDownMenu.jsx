@@ -7,7 +7,6 @@ const DropDownMenu = (props) => {
   return (
     <li className="dropdown">
       <a
-        href="#"
         className="dropdown-toggle"
         data-toggle="dropdown"
         role="button"

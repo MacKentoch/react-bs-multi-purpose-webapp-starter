@@ -15,7 +15,7 @@ const LeftNav = (props) => {
                 <MenuButton
                   key={menuIndex}
                   label={menu.label}
-                  link={menu.link}
+                  buttonLink={menu.buttonLink}
                   onMenuClick={menu.onButtonClick}
                 />
               );

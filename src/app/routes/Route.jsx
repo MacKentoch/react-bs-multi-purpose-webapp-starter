@@ -16,8 +16,6 @@ import configureStore           from '../redux/store/configureStore';
 import DevTools                 from '../redux/devTools/DevTools.jsx';
 
 import {
-  Home,
-  About,
   Dashboard
 }                               from '../views';
 
@@ -31,8 +29,6 @@ export const Routes = () => {
         <Router history={syncedHistory}>
           <Route path="/" component={App} >
             <IndexRoute component={Dashboard} />
-            <Route path="/home" component={Home} />
-            <Route path="/about" component={About} />
           </Route>
         </Router>
         { process.env.NODE_ENV !== 'production' ? <DevTools /> : null }

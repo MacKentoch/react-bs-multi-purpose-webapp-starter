@@ -7,6 +7,7 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.init();
+    console.info('dashboard view loading');
   }
 
   init() {
