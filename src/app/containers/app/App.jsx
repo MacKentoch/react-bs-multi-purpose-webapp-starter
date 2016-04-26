@@ -1,8 +1,8 @@
 'use strict';
 
 import React, { Component } from 'react';
-import topNavBarModel       from '../../models/topNavigationBar.json';
-import leftSideBarModel     from '../../models/leftSidenav.json';
+import topNavBarModel       from '../../models/topNavigationBar';
+import leftSideBarModel     from '../../models/leftSidenav';
 import {
   PageContainer
 }                           from '../../containers';

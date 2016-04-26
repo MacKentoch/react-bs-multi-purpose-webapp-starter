@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import HumburgerMenu        from './humburgerMenu/HumburgerMenu.jsx';
+import HumburgerMenu        from './humbugerMenu/HumbugerMenu.jsx';
 import NavBarBrand          from './navBarBrand/NavBarBrand.jsx';
 import RightNav             from './rightNav/RightNav.jsx';
 import LeftNav              from './leftNav/LeftNav.jsx';
