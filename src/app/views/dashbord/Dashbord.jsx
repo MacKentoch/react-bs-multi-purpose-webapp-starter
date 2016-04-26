@@ -39,6 +39,19 @@ class Dashboard extends Component {
         <h1>
           DASHBOARD
         </h1>
+        <div className="row">
+          <div className="col-sm-12">
+
+            <div className="card">
+              <i className="icon ion-home"></i>
+              <h3>
+                test card
+              </h3>
+            </div>
+
+          </div>
+
+        </div>
       </div>
     );
   }

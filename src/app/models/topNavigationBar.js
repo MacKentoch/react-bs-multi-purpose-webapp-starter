@@ -1,5 +1,5 @@
 export const topNavBarModel = {
-  brand:          'React Redux Bootstrap Starter',
+  brand:          'react boostrap',
   inversedStyle:  true,
   searchForm: {
     position:     'navbar-right',
