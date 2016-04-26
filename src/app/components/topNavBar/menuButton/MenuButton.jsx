@@ -4,28 +4,30 @@ import React      from 'react';
 import { Link }   from 'react-router';
 
 const MenuButton = (props) => {
-  console.log('MenuButton props : ', props);
-
   if (props.onMenuClick) {
     return (
-      <Link
-        to="/"
-        onClick={props.onMenuClick}>
-        {props.label}
-      </Link>
+      <li>
+        <Link
+          to={props.buttonLink ? props.buttonLink : '/'}
+          onClick={props.onMenuClick}>
+          {props.label}
+        </Link>
+      </li>
     );
   } else {
     return (
-      <Link to={props.buttonLink}>
-        {props.label}
-      </Link>
+      <li>
+        <Link to={props.buttonLink ? props.buttonLink : '/'}>
+          {props.label}
+        </Link>
+      </li>
     );
   }
 };
 
 MenuButton.propTypes ={
   label:        React.PropTypes.string.isRequired,
-  buttonLink:   React.PropTypes.string.isRequired,
+  buttonLink:   React.PropTypes.string,
   onMenuClick:  React.PropTypes.func
 };
 

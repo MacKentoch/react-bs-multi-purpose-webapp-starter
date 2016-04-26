@@ -19,8 +19,9 @@ class TopNavBar extends Component {
     const hasLeftNav    = navModel.leftNav  && navModel.leftNav.length  > 0;
     const hasRightNav   = navModel.rightNav && navModel.rightNav.length > 0;
 
+    const navbarStyle = `navbar ${navModel.inversedStyle ? 'navbar-inverse ' : ''} navbar-fixed-top`
     return (
-      <nav className="navbar navbar-inverse navbar-fixed-top">
+      <nav className={navbarStyle}>
         <div className="container-fluid">
           <div className="navbar-header">
             <HumburgerMenu />
@@ -61,6 +62,8 @@ class TopNavBar extends Component {
 TopNavBar.propTypes = {
   navModel: React.PropTypes.shape({
     brand:      React.PropTypes.string,
+
+    inversedStyle: React.PropTypes.bool.isRequired,
 
     searchForm: React.PropTypes.shape({
       position:     React.PropTypes.oneOf(['navbar-left', 'navbar-right']),

@@ -13,19 +13,18 @@ import {
 class App extends Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   topNavBarModel:   topNavBarModel,
-    //   leftSideBarModel: leftSidenavModel
-    // };
+    this.state = {
+      topNavBarModel:   topNavBarModel,
+      leftSideBarModel: leftSidenavModel
+    };
   }
 
   render() {
     return (
       <div>
-        <TopNavBar navModel={topNavBarModel} />
+        <TopNavBar navModel={this.state.topNavBarModel} />
         <PageContainer>
-          <SideBar sideBarMenus={leftSidenavModel} />
+          <SideBar sideBarMenus={this.state.leftSideBarModel} />
           <Main>
             {this.props.children}
           </Main>
@@ -36,9 +35,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children:   React.PropTypes.node,
-  history:    React.PropTypes.object,
-  location:   React.PropTypes.object
+  children:   React.PropTypes.node
 };
 
 export default App;
