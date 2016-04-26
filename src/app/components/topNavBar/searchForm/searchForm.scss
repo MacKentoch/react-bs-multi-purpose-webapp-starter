@@ -2,7 +2,8 @@
   // width: $SEARCH_INPUT_WIDTH !important;
   //-webkit-transition: all ease-in 2s;
   //transition: all ease-in 2s;
-  transition: all 2s linear 1s;
+  width: 200px !important;
+  transition: all 0.8s;
 }
 
 .searchInputLarger {
