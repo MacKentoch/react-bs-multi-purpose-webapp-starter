@@ -11,7 +11,7 @@ export const topNavBarModel = {
   rightNav: [
     {
       label:      'link1',
-      buttonLink: '/',
+      buttonLink: '/test',
       type:       'button'
     },
     {

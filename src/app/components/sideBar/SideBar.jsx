@@ -15,17 +15,19 @@ const SideBar = (props) => {
                   group.map(
                     (menu, menuIndex) => {
                       return (
-                        <Link
-                          key={'sidemenu-' + menuIndex}
-                          to={menu.link}
-                          className={menu.isDefaultActive ? 'active' : ''}
-                          onButtonClick={menu.onButtonClick ? menu.onButtonClick : null}>
-                          {menu.label}
-                          {
-                            menu.isDefaultActive &&
-                            <span className="sr-only">(current)</span>
-                          }
-                        </Link>
+                        <li>
+                          <Link
+                            key={'sidemenu-' + menuIndex}
+                            to={menu.link}
+                            className={menu.isDefaultActive ? 'active' : ''}
+                            onButtonClick={menu.onButtonClick ? menu.onButtonClick : null}>
+                            {menu.label}
+                            {
+                              menu.isDefaultActive &&
+                              <span className="sr-only">(current)</span>
+                            }
+                          </Link>
+                        </li>
                     );
                     }
                   )

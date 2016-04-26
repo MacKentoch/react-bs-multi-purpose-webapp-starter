@@ -29,6 +29,7 @@ export const Routes = () => {
         <Router history={syncedHistory}>
           <Route path="/" component={App} >
             <IndexRoute component={Dashboard} />
+            <Route path="/test" component={Dashboard} />
           </Route>
         </Router>
         { process.env.NODE_ENV !== 'production' ? <DevTools /> : null }
