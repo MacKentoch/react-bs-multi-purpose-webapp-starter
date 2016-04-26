@@ -1,12 +1,7 @@
 'use strict';
 
 import React, { Component }      from 'react';
-import {
-  PageContainer
-}             from '../../containers';
-
 import classNames from 'classnames';
-import { Link }   from 'react-router';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -40,7 +35,9 @@ class Dashboard extends Component {
       <div
         key="dashboardView"
         className={this.processViewAnimationClasses()}>
-
+        <h1>
+          DASHBOARD
+        </h1>
       </div>
     );
   }
