@@ -11,18 +11,21 @@ const RightNav = (props) => {
         props.rightNavModel.map(
           (menu, menuIndex) => {
             if (menu.type === 'button') {
+              console.log('button model: ', menu);
               return (
                 <MenuButton
-                  key={menuIndex}
+                  key={'menuButton-' + menuIndex}
                   label={menu.label}
-                  link={menu.link}
+                  buttonLink={menu.buttonLink}
                   onMenuClick={menu.onButtonClick}
                 />
               );
             }
             if (menu.type === 'dropdown') {
+              console.log('dropdown model: ', menu);
               return (
                 <DropDownMenu
+                  key={'menudropDown-' + menuIndex}
                   label={menu.label}
                   dropdownMenus={menu.dropdownMenus}
                 />

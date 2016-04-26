@@ -22,8 +22,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('topNavBarModel', this.state.topNavBarModel);
-    console.log('leftSideBarModel', this.state.leftSideBarModel);
     return (
       <div>
         <TopNavBar navModel={this.state.topNavBarModel} />

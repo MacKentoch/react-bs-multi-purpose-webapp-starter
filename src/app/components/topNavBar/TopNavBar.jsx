@@ -46,8 +46,8 @@ class TopNavBar extends Component {
             {
               hasSearchForm &&
               <SearchForm
-                position={''}
-                placeHolder={''}
+                position={navModel.searchForm.position}
+                placeHolder={navModel.searchForm.placeHolder}
                 submitSearch={(value)=>this.handlesSubmitSearch(value)}
               />
             }
