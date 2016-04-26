@@ -6,7 +6,7 @@ import DropDownMenu from '../menuButton/MenuButton.jsx';
 
 const RightNav = (props) => {
   return (
-    <ul className="nav navbar-nav navbar-right">
+    <ul className="nav navbar-nav navbar-left">
       {
         props.rightNavModel.map(
           (menu, menuIndex) => {
