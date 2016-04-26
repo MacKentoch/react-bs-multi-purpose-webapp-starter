@@ -14,7 +14,7 @@ class SearchForm extends Component {
   handleOnClick(event) {
     event.preventDefault();
     console.log('this.refs.searchInput.style', this.myTextInput);
-     this.myTextInput.style.width = '300px';
+     this.myTextInput.classList.add('searchInputLarger');
   }
 
   render() {

@@ -1,5 +1,10 @@
 .searchInputLarge {
   // width: $SEARCH_INPUT_WIDTH !important;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  //-webkit-transition: all ease-in 2s;
+  //transition: all ease-in 2s;
+  transition: all 2s linear 1s;
+}
+
+.searchInputLarger {
+  width: 300px !important;
 }
