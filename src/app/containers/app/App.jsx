@@ -24,9 +24,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TopNavBar />
+        <TopNavBar navModel={this.state.topNavBarModel} />
         <PageContainer>
-          <SideBar />
+          <SideBar sideBarMenus={this.state.leftSideBarModel} />
           <Main>
             {this.props.children}
           </Main>
