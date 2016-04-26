@@ -1,9 +1,9 @@
 'use strict';
 
-import React            from 'react';
-import { Link }         from 'react-router';
+import React, { Component } from 'react';
+import { Link }             from 'react-router';
 
-class NavigationBar extends React.Component {
+class NavigationBar extends Component {
 
   renderHumburger() {
     return (

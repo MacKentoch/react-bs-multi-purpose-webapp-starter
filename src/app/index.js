@@ -9,7 +9,8 @@ import 'babel-polyfill';
 import 'animate.css';
 import 'jquery';
 import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/cosmo/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './style/index.style.scss';
 
