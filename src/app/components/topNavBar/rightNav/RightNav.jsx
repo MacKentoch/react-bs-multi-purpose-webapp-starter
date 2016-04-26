@@ -2,7 +2,7 @@
 
 import React        from 'react';
 import MenuButton   from '../menuButton/MenuButton.jsx';
-import DropDownMenu from '../menuButton/MenuButton.jsx';
+import DropDownMenu from '../dropDownMenu/DropDownMenu.jsx';
 
 const RightNav = (props) => {
   return (
@@ -15,7 +15,7 @@ const RightNav = (props) => {
                 <MenuButton
                   key={'menuButton-' + menuIndex}
                   label={menu.label}
-                  buttonLink={menu.buttonLink ? menu.buttonLink : ''}
+                  buttonLink={menu.buttonLink}
                   onMenuClick={menu.onButtonClick}
                 />
               );

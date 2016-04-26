@@ -8,7 +8,7 @@ const MenuButton = (props) => {
     return (
       <li>
         <Link
-          to={props.buttonLink ? props.buttonLink : '/'}
+          to={props.buttonLink}
           onClick={props.onMenuClick}>
           {props.label}
         </Link>
@@ -17,7 +17,7 @@ const MenuButton = (props) => {
   } else {
     return (
       <li>
-        <Link to={props.buttonLink ? props.buttonLink : '/'}>
+        <Link to={props.buttonLink}>
           {props.label}
         </Link>
       </li>
@@ -27,7 +27,7 @@ const MenuButton = (props) => {
 
 MenuButton.propTypes ={
   label:        React.PropTypes.string.isRequired,
-  buttonLink:   React.PropTypes.string,
+  buttonLink:   React.PropTypes.string.isRequired,
   onMenuClick:  React.PropTypes.func
 };
 

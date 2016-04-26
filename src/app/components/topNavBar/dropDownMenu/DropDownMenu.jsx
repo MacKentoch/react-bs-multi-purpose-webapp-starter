@@ -1,12 +1,27 @@
 'use strict';
 
-import React      from 'react';
-import { Link }   from 'react-router';
+import React              from 'react';
+import { Link }           from 'react-router';
+import {
+  DropdownButton,
+  MenuItem
+}                         from 'react-bootstrap';
 
 const DropDownMenu = (props) => {
+  // return (
+  //   <DropdownButton title={props.label}>
+  //     <MenuItem eventKey="1">
+  //       Dropdown link
+  //     </MenuItem>
+  //     <MenuItem eventKey="2">
+  //       Dropdown link
+  //     </MenuItem>
+  //   </DropdownButton>
+  // );
   return (
     <li className="dropdown">
       <a
+        href="#"
         className="dropdown-toggle"
         data-toggle="dropdown"
         role="button"
@@ -14,7 +29,9 @@ const DropDownMenu = (props) => {
         {props.label}
         <span className="caret"></span>
       </a>
-      <ul className="dropdown-menu" role="menu">
+      <ul
+        className="dropdown-menu"
+        role="menu">
         {
           props.dropdownMenus.map(
             (dropdownMenu, dropdownMenuIndex) => {
@@ -30,21 +47,25 @@ const DropDownMenu = (props) => {
               // a dropdown menu with onClick callback
               if (dropdownMenu.onMenuClick) {
                 return (
-                  <Link
-                    key={dropdownMenuIndex}
-                    to={dropdownMenu.link}
-                    onClick={dropdownMenu.onMenuClick}>
-                    {dropdownMenu.label}
-                  </Link>
+                  <li>
+                    <Link
+                      key={dropdownMenuIndex}
+                      to={dropdownMenu.link}
+                      onClick={dropdownMenu.onMenuClick}>
+                      {dropdownMenu.label}
+                    </Link>
+                  </li>
                 );
               } else {
                 // a dropdown menu without onClick callback
                 return (
-                  <Link
-                    key={dropdownMenuIndex}
-                    to={dropdownMenu.link}>
-                    {dropdownMenu.label}
-                  </Link>
+                  <li>
+                    <Link
+                      key={dropdownMenuIndex}
+                      to={dropdownMenu.link}>
+                      {dropdownMenu.label}
+                    </Link>
+                  </li>
                 );
               }
             }
@@ -53,6 +74,7 @@ const DropDownMenu = (props) => {
       </ul>
     </li>
   );
+
 };
 
 DropDownMenu.propTypes = {
