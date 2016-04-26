@@ -1,66 +1,56 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { Link }             from 'react-router';
 import HumburgerMenu        from './humburgerMenu/HumburgerMenu.jsx';
 import NavBarBrand          from './navBarBrand/NavBarBrand.jsx';
+import RightNav             from './rightNav/RightNav.jsx';
+import LeftNav              from './leftNav/LeftNav.jsx';
+import SearchForm           from './searchForm/SearchForm.jsx';
 
 class TopNavBar extends Component {
 
-  renderLeftNavButton() {
-    if (this.props.navModel.leftLinks) {
-      const leftNavButton = this.props.navModel.leftLinks.map((aLinkBtn, index) => {
-        return (
-          <li key={index}>
-            <Link
-              to={aLinkBtn.link}
-              onClick={(ev) => this.props.handleLeftNavItemClick(ev, aLinkBtn.view)}>
-              {aLinkBtn.label}
-            </Link>
-          </li>
-        );
-      });
-      return  leftNavButton;
-    }
-    return null;
-  }
-
-  renderRightNavButton() {
-    if (this.props.navModel.rightLinks) {
-      const rightNavButton = this.props.navModel.rightLinks.map((aLinkBtn, index) => {
-        return (
-          <li key={index}>
-            <Link
-              to={aLinkBtn.link}
-              onClick={(ev) => this.props.handleRightNavItemClick(ev, aLinkBtn.view)}>
-                {aLinkBtn.label}
-            </Link>
-          </li>
-        );
-      });
-      return  rightNavButton;
-    }
-    return null;
+  handlesSubmitSearch(value) {
+    console.info(`searching value = ${value}`);
   }
 
   render() {
+    const navModel      = this.props.navModel;
+    const hasSearchForm = Object.prototype.hasOwnProperty.call(navModel, 'searchForm');
+    const hasLeftNav    = navModel.leftNav  && navModel.leftNav.length  > 0;
+    const hasRightNav   = navModel.rightNav && navModel.rightNav.length > 0;
+
     return (
-      <nav className="navbar navbar-default">
-        <div className="containersCustom">
+      <nav className="navbar navbar-inverse navbar-fixed-top">
+        <div className="container-fluid">
           <div className="navbar-header">
             <HumburgerMenu />
-            <NavBarBrand brand={this.props.brand} />
-          </div>
-          
+            <NavBarBrand brand={navModel.brand} />
+        </div>
+
           <div
+            id="navbar"
             className="collapse navbar-collapse"
             id="bs-example-navbar-collapse-1">
-            <ul className="nav navbar-nav">
-              {this.renderLeftNavButton()}
-            </ul>
-            <ul className="nav navbar-nav navbar-right">
-              {this.renderRightNavButton()}
-            </ul>
+            {
+              hasLeftNav &&
+              <LeftNav
+                leftNavModel={navModel.leftNav}
+              />
+            }
+            {
+              hasRightNav &&
+              <RightNav
+                rightNavModel={navModel.rightNav}
+              />
+            }
+            {
+              hasSearchForm &&
+              <SearchForm
+                position={''}
+                placeHolder={''}
+                submitSearch={(value)=>this.handlesSubmitSearch(value)}
+              />
+            }
           </div>
         </div>
       </nav>
@@ -69,27 +59,55 @@ class TopNavBar extends Component {
 }
 
 TopNavBar.propTypes = {
-  brand:                    React.PropTypes.string,
-  handleLeftNavItemClick:   React.PropTypes.func,
-  handleRightNavItemClick:  React.PropTypes.func,
-  navModel:                 React.PropTypes.shape({
-    leftLinks:  React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        label: React.PropTypes.string.isRequired,
-        link : React.PropTypes.string.isRequired
-      })
-    ).isRequired,
-    rightLinks:  React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        label: React.PropTypes.string.isRequired,
-        link : React.PropTypes.string.isRequired
-      })
-    ).isRequired
-  })
-};
+  navModel: React.PropTypes.shape({
+    brand:      React.PropTypes.string,
 
-TopNavBar.defaultProps  = {
-  brand  : 'brand'
+    searchForm: React.PropTypes.shape({
+      position:     React.PropTypes.oneOf(['navbar-left', 'navbar-right']),
+      placeHolder:  React.PropTypes.string
+    }),
+
+    leftNav:  React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        // common
+        label:          React.PropTypes.string.isRequired,
+        type:           React.PropTypes.oneOf(['button', 'dropdown']).isRequired,
+        // button
+        buttonLink:     React.PropTypes.string,
+        onButtonClick:  React.PropTypes.func,
+        // dropdown
+        dropdownMenus:  React.PropTypes.arrayOf(
+          React.PropTypes.shape({
+            label:        React.PropTypes.string,
+            link:         React.PropTypes.string,
+            isDivider:    React.PropTypes.bool,
+            onMenuClick:  React.PropTypes.func
+          })
+        )
+      })
+    ),
+
+    rightNav:  React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        // common
+        label:          React.PropTypes.string.isRequired,
+        type:           React.PropTypes.oneOf(['button', 'dropdown']).isRequired,
+        // button
+        buttonLink:     React.PropTypes.string,
+        onButtonClick:  React.PropTypes.func,
+        // dropdown
+        dropdownMenus:  React.PropTypes.arrayOf(
+          React.PropTypes.shape({
+            label:        React.PropTypes.string,
+            link:         React.PropTypes.string,
+            isDivider:    React.PropTypes.bool,
+            onMenuClick:  React.PropTypes.func
+          })
+        )
+      })
+    )
+
+  })
 };
 
 export default TopNavBar;

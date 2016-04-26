@@ -1,18 +1,38 @@
 {
   "brand":      "React Redux Bootstrap Starter",
+
+  "searchForm": {
+    "position":     "navbar-right",
+    "placeHolder":  "rechercher..."
+  },
+
   "leftNav":  [],
+
   "rightNav": [
     {
-      "label":      "Home",
-      "link":       "/",
-      "view":       "home",
-      "isRouteBtn": true
+      "label":      "link1",
+      "buttonLink": "/",
+      "type":       "button",
+      "buttonLink": ""
     },
     {
-      "label":      "About",
-      "link":       "/about",
-      "view":       "about",
-      "isRouteBtn": true
+      "label":      "dropdown1",
+      "type":       "dropdown",
+      "dropdownMenus": [
+        {
+          "label":        "menu1",
+          "link":         "/",
+          "isDivider":    false
+        },
+        {
+          "isDivider":    true
+        },
+        {
+          "label":        "menu2",
+          "link":         "/",
+          "isDivider":    false
+        },
+      ]
     }
   ]
 }

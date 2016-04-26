@@ -4,11 +4,11 @@ import React        from 'react';
 import MenuButton   from '../menuButton/MenuButton.jsx';
 import DropDownMenu from '../menuButton/MenuButton.jsx';
 
-const RightNav = (props) => {
+const LeftNav = (props) => {
   return (
-    <ul className="nav navbar-nav navbar-left">
+    <ul className="nav navbar-nav">
       {
-        props.rightNavModel.map(
+        props.leftNavModel.map(
           (menu, menuIndex) => {
             if (menu.type === 'button') {
               return (
@@ -36,8 +36,8 @@ const RightNav = (props) => {
   );
 };
 
-RightNav.propTypes = {
-  rightNavModel:  React.PropTypes.arrayOf(
+LeftNav.propTypes = {
+  leftNavModel:  React.PropTypes.arrayOf(
     React.PropTypes.shape({
       // commun
       label:          React.PropTypes.string.isRequired,
@@ -58,4 +58,4 @@ RightNav.propTypes = {
   ).isRequired
 };
 
-export default RightNav;
+export default LeftNav;
