@@ -1,8 +1,8 @@
 'use strict';
 
 import React, { Component } from 'react';
-import topNavBarModel       from '../../models/topNavigationBar';
-import leftSideBarModel     from '../../models/leftSidenav';
+import { topNavBarModel }   from '../../models/topNavigationBar';
+import { leftSidenavModel }      from '../../models/leftSidenav';
 import {
   PageContainer
 }                           from '../../containers';
@@ -17,11 +17,13 @@ class App extends Component {
     super(props);
     this.state = {
       topNavBarModel:   topNavBarModel,
-      leftSideBarModel: leftSideBarModel
+      leftSideBarModel: leftSidenavModel
     };
   }
 
   render() {
+    console.log('topNavBarModel', this.state.topNavBarModel);
+    console.log('leftSideBarModel', this.state.leftSideBarModel);
     return (
       <div>
         <TopNavBar navModel={this.state.topNavBarModel} />

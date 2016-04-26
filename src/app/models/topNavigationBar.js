@@ -1,4 +1,4 @@
-export const topNavigationBar = {
+export const topNavBarModel = {
   'brand':      'React Redux Bootstrap Starter',
 
   'searchForm': {

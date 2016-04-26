@@ -1,4 +1,4 @@
-export const leftSidenav = [
+export const leftSidenavModel = [
   [
     {
       label:            'sideMenu1',
