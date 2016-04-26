@@ -6,7 +6,9 @@
     "placeHolder":  "rechercher..."
   },
 
-  "leftNav":  [],
+  "leftNav":  [
+    
+  ],
 
   "rightNav": [
     {
