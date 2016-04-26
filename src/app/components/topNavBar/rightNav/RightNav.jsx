@@ -1,7 +1,8 @@
 'use strict';
 
-import React      from 'react';
-import MenuButton from '../menuButton/MenuButton.jsx';
+import React        from 'react';
+import MenuButton   from '../menuButton/MenuButton.jsx';
+import DropDownMenu from '../menuButton/MenuButton.jsx';
 
 const RightNav = (props) => {
   return (
@@ -19,28 +20,12 @@ const RightNav = (props) => {
                 />
               );
             }
-            if () {
+            if (menu.type === 'dropdown') {
               return (
-                <li class="dropdown">
-                  <a
-                    href="#"
-                    class="dropdown-toggle"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-expanded="false">
-                    {menu.label}
-                    <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+                <DropDownMenu
+                  label={}
+                  dropdownMenus={}
+                />
               );
             }
             return null;
@@ -65,6 +50,7 @@ RightNav.propTypes = {
         React.PropTypes.shape(
           label:        React.PropTypes.string,
           link:         React.PropTypes.string,
+          isDivider:    React.PropTypes.bool,
           onMenuClick:  React.PropTypes.func
         )
       )
