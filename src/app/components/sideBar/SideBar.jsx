@@ -1,47 +1,54 @@
-import React from 'react';
+import React      from 'react';
+import { Link }   from 'react-router';
 
 const SideBar = (props) => {
   return (
     <div className="col-sm-3 col-md-2 sidebar">
-
       {
-
+        props.sideBarMenus.map(
+          (group, groupIndex) => {
+            return (
+              <ul
+                key={'group-' + groupIndex}
+                className="nav nav-sidebar">
+                {
+                  group.map(
+                    (menu, menuIndex) => {
+                      return (
+                        <Link
+                          key={'sidemenu-' + menuIndex}
+                          to={menu.link}
+                          className={menu.isDefaultActive ? 'active' : ''}
+                          onButtonClick={menu.onButtonClick ? menu.onButtonClick : null}>
+                          {menu.label}
+                          {
+                            menu.isDefaultActive &&
+                            <span className="sr-only">(current)</span>
+                          }
+                        </Link>
+                    );
+                    }
+                  )
+                }
+              </ul>
+            );
+          }
+        )
       }
-      <ul className="nav nav-sidebar">
-
-        <li className="active">
-          <a href="#">
-            Overview
-            <span className="sr-only">(current)</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="#">Reports</a>
-        </li>
-        <li><a href="#">Analytics</a></li>
-        <li><a href="#">Export</a></li>
-      </ul>
-
-      <ul className="nav nav-sidebar">
-        <li><a href="">Nav item</a></li>
-        <li><a href="">Nav item again</a></li>
-        <li><a href="">One more nav</a></li>
-        <li><a href="">Another nav item</a></li>
-        <li><a href="">More navigation</a></li>
-      </ul>
-
     </div>
   );
 };
 
 SideBar.propTypes = {
   sideBarMenus: React.PropTypes.arrayOf(
-    React.PropTypes.shape({
-      label:          React.PropTypes.string.isRequired,
-      link:           React.PropTypes.string,
-      onButtonClick:  React.PropTypes.func
-    })
+    React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        label:            React.PropTypes.string.isRequired,
+        link:             React.PropTypes.string,
+        isDefaultActive:  React.PropTypes.bool.isRequired,
+        onButtonClick:    React.PropTypes.func
+      })
+    ).isRequired
   ).isRequired
 };
 

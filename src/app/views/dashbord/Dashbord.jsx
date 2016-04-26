@@ -1,7 +1,10 @@
 'use strict';
 
 import React, { Component }      from 'react';
-import Jumbotron  from '../../components/jumbotron/Jumbotron.jsx';
+import {
+  PageContainer
+}             from '../../containers';
+
 import classNames from 'classnames';
 import { Link }   from 'react-router';
 
@@ -19,15 +22,9 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-    this.props.actions.enterHome();
-
     this.state = {
       viewEnters  : true
     };
-  }
-
-  componentWillUnmount() {
-    this.props.actions.leaveHome();
   }
 
   processViewAnimationClasses() {
@@ -41,32 +38,9 @@ class Dashboard extends Component {
   render() {
     return(
       <div
-        key="homeView"
+        key="dashboardView"
         className={this.processViewAnimationClasses()}>
-        <Jumbotron>
-          <h1>
-            Full ES2015 ReactJS + Bootstrap
-          </h1>
-          <h2>
-            with Hot Reload!!!
-          </h2>
-          <h2>
-            with React Router (SPA)
-          </h2>
-          <h1>
-            Starter
-          </h1>
-          <h1></h1>
-          <p>
-            <Link
-              className="btn btn-success btn-lg"
-              to={'/about'}>
-              <i className="fa fa-info"></i>
-              &nbsp;
-              go to about
-            </Link>
-          </p>
-        </Jumbotron>
+
       </div>
     );
   }
