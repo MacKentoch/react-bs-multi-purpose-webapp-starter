@@ -2,22 +2,8 @@
 
 import React              from 'react';
 import { Link }           from 'react-router';
-import {
-  DropdownButton,
-  MenuItem
-}                         from 'react-bootstrap';
 
 const DropDownMenu = (props) => {
-  // return (
-  //   <DropdownButton title={props.label}>
-  //     <MenuItem eventKey="1">
-  //       Dropdown link
-  //     </MenuItem>
-  //     <MenuItem eventKey="2">
-  //       Dropdown link
-  //     </MenuItem>
-  //   </DropdownButton>
-  // );
   return (
     <li className="dropdown">
       <a
@@ -74,7 +60,6 @@ const DropDownMenu = (props) => {
       </ul>
     </li>
   );
-
 };
 
 DropDownMenu.propTypes = {

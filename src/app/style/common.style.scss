@@ -20,3 +20,8 @@
   animation-duration: 0.5s;
   animation-fill-mode: both;
 }
+
+.navbar-inverse {
+    background-color: $NAV_BAR_INVERSE_BACKGROUND_COLOR;
+    border-color: $NAV_BAR_INVERSE_BACKGROUND_COLOR;
+}

@@ -20,7 +20,7 @@ class SearchForm extends Component {
         <input
           refs="searchInput"
           type="text"
-          className="form-control"
+          className="form-control searchInputLarge"
           autoFocus={props.autofocus}
           placeholder={props.placeHolder}
           onKeyPress={(target) => this.handleKeyPress(target)}
