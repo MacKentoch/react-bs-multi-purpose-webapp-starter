@@ -59,6 +59,7 @@
     "babel-polyfill": "^6.7.4",
     "bootstrap": "^3.3.6",
     "bootswatch": "^3.3.6",
+    "classlist-polyfill": "^1.0.3",
     "classnames": "^2.2.3",
     "font-awesome": "^4.5.0",
     "ionicons": "^3.0.0",
