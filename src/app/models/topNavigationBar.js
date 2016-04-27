@@ -1,5 +1,5 @@
 export const topNavBarModel = {
-  brand:          'react boostrap',
+  brand:          'react bs starter',
   inversedStyle:  true,
   searchForm: {
     position:     'navbar-right',
