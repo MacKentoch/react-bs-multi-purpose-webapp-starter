@@ -3,6 +3,7 @@ react-bs-multi-purpose-webapp-starter
 
 > A multi-purpose web app starter made with ReactJS and Bootstrap.
 
+
 ## Detailed Content
 
 **Front:**
