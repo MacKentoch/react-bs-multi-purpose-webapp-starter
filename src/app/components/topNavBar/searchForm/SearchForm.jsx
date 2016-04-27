@@ -6,15 +6,13 @@ class SearchForm extends Component {
 
   handleKeyPress(target) {
     if (target.charCode === 13) {
-      const searchInput = this.refs.searchInput.findDOMNode();
-      this.props.submitSearch(searchInput.value);
+      this.props.submitSearch(this.myTextInput.value);
     }
   }
 
   handleOnClick(event) {
     event.preventDefault();
-    console.log('this.refs.searchInput.style', this.myTextInput);
-     this.myTextInput.classList.add('searchInputLarger');
+    this.myTextInput.classList.add('searchInputLarger');
   }
 
   render() {
@@ -25,7 +23,6 @@ class SearchForm extends Component {
       <form className={formClass}>
         <input
           ref={(ref) => this.myTextInput = ref}
-
           type="text"
           className="form-control searchInputLarge"
           autoFocus={props.autofocus}
