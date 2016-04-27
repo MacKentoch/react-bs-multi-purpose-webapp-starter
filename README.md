@@ -1,7 +1,7 @@
-react-bootstrap-multipurpose-starter
+react-bs-multi-purpose-webapp-starter
 ======
 
-> A multipurpose web app starter made with ReactJS and Bootstrap.
+> A multi-purpose web app starter made with ReactJS and Bootstrap.
 
 ## Detailed Content
 
