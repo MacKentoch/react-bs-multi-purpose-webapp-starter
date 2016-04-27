@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-bootstrap-webpack-starter",
+  "name": "react-bootstrap-multipurpose-starter",
   "version": "0.1.0",
   "description": "react js + redux + react router + hot reload + devTools + bootstrap + webpack starter",
   "main": "src/index.js",
@@ -10,17 +10,13 @@
   },
   "keywords": [
     "react",
-    "redux",
-    "react-redux",
     "ES6",
     "ES2015",
     "bootstrap",
     "bootswatch",
     "starter",
     "webpack",
-    "hot-reload",
-    "redux-devtools",
-    "devtools"
+    "hot-reload"
   ],
   "author": "Erwan DATIN (MacKentoch)",
   "license": "MIT",
@@ -44,10 +40,6 @@
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",
     "react-hot-loader": "^1.3.0",
-    "redux-devtools": "^3.2.0",
-    "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-log-monitor": "^1.0.9",
-    "redux-logger": "^2.6.1",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
@@ -69,12 +61,7 @@
     "react-dom": "^0.14.7",
     "react-modal": "^0.6.1",
     "react-notification": "^5.0.1",
-    "react-redux": "^4.4.1",
     "react-router": "^2.0.0",
-    "react-router-redux": "^4.0.1",
-    "react-tap-event-plugin": "^0.2.2",
-    "redux": "^3.3.1",
-    "redux-thunk": "^2.0.1",
-    "superagent": "^1.8.3"
+    "react-tap-event-plugin": "^0.2.2"
   }
 }
