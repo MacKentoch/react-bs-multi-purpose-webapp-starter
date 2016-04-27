@@ -1,14 +1,12 @@
-MG app
+react-bootstrap-multipurpose-starter
 ======
+
+> A multipurpose web app starter made with ReactJS and Bootstrap.
 
 ## Detailed Content
 
 **Front:**
 - React JS (0.14.x - [github :link:](https://github.com/facebook/react))
-- Redux (*as you application grows managing state will be a serious concern, save pain with Redux*)
-- React-Redux (*Redux is not specific to ReactJS, you could easily use it with Angular2 for instance*)
-- Redux-devtools (*want to time travel your application State?*)
-- React-Router-Redux (*previously named react-simple-router*)
 - react-router (2.x- [github :link:](https://github.com/reactjs/react-router))
 - Bootstrap (3.x - [github :link:](https://github.com/twbs/bootstrap))
 - React-Bootstrap ([github :link:](https://github.com/react-bootstrap/react-bootstrap))
@@ -40,25 +38,17 @@ MG app
 ```bash
 npm install
 ```
-### bundle dev mode (*+ redux-devtools*)
+### bundle dev mode
 
 ```bash
 npm run dev
 ```
 
-##### Note : redux-devtools shortcuts
-- `ctrl+h`: to toggle devtools panel
-- `ctrl+q`: to change devtools panel position (*by default: on the right*)
-
-### dev : hot reload mode (*+ redux-devtools*)
+### dev : hot reload mode
 
 ```bash
 npm run start
 ```
-
-##### Note : redux-devtools shortcuts
-- `ctrl+h`: to toggle devtools panel
-- `ctrl+q`: to change devtools panel position (*by default: on the right*)
 
 ### bundle production mode
 
