@@ -3,7 +3,7 @@ react-bs-multi-purpose-webapp-starter
 
 > A multi-purpose web app starter made with ReactJS and Bootstrap.
 
-[preview here](https://cdn.rawgit.com/MacKentoch/react-bs-multi-purpose-webapp-starter/v0.1.1/index.html)
+[preview here](https://cdn.rawgit.com/MacKentoch/react-bs-multi-purpose-webapp-starter/v0.1.3/index.html)
 
 ## Detailed Content
 
