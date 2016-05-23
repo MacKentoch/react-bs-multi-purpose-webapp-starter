@@ -9,17 +9,33 @@ import {
   SideBar,
   Main
 }                           from '../../components';
+import classNames           from 'classnames';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      topNavBarModel:   topNavBarModel,
-      leftSideBarModel: leftSidenavModel
+      topNavBarModel:       topNavBarModel,
+      leftSideBarModel:     leftSidenavModel,
+
+      leftSideBarAnimated:  true,
+      leftSideBarShow:      true,
+      leftSideBarClasses:   {
+        'col-sm-3': true,
+        'col-md-2': true,
+        'sidebar':  true
+      }
     };
   }
 
   render() {
+    const leftSideBarClasses = classNames({
+      ...this.state.leftSideBarClasses,
+      'sideBarAnimated': this.state.leftSideBarAnimated,
+      'sideBarHide': !this.state.leftSideBarShow,
+      'sideBarShow': this.state.leftSideBarShow
+    });
+
     return (
       <div>
         <TopNavBar
@@ -27,7 +43,9 @@ class App extends Component {
           toggleSideMenu={(e)=>this.toggleSideMenu(e)}
         />
         <PageContainer>
-          <SideBar sideBarMenus={this.state.leftSideBarModel} />
+          <SideBar
+            sideBarMenus={this.state.leftSideBarModel}
+            classes={leftSideBarClasses}/>
           <Main>
             {this.props.children}
           </Main>
@@ -37,8 +55,9 @@ class App extends Component {
   }
 
   toggleSideMenu(event) {
-    event.preventDefault();
-    console.info('shluld toggle menu');
+    // event.preventsDefault();
+    this.setState({leftSideBarShow: !this.state.leftSideBarShow});
+    // console.info('should toggle menu');
   }
 }
 

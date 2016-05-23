@@ -1,0 +1,11 @@
+.sideBarAnimated {
+  transition: all 0.3s;
+}
+
+.sideBarHide {
+  transform: translate(-1000px);
+}
+
+.sideBarShow {
+  transform: translate(0px);
+}

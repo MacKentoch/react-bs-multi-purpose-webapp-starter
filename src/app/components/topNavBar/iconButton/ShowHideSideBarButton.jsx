@@ -7,12 +7,12 @@ import { Navicon }  from '../../icons';
 const showHideSideBarButton = (props) => {
   return (
     <li>
-      <Link onClick={()=>props.onMenuClick()}>
+      <a onClick={()=>props.onMenuClick()}>
         <Navicon
           width="24px"
           height="24px"
         />
-      </Link>
+      </a>
     </li>
   );
 };

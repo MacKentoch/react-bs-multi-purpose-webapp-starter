@@ -1,9 +1,9 @@
-import React      from 'react';
+import React, { PropTypes } from 'react';
 import { Link }   from 'react-router';
 
 const SideBar = (props) => {
   return (
-    <div className="col-sm-3 col-md-2 sidebar">
+    <div className={props.classes}>
       {
         props.sideBarMenus.map(
           (group, groupIndex) => {
@@ -42,16 +42,17 @@ const SideBar = (props) => {
 };
 
 SideBar.propTypes = {
-  sideBarMenus: React.PropTypes.arrayOf(
-    React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        label:            React.PropTypes.string.isRequired,
-        link:             React.PropTypes.string,
-        isDefaultActive:  React.PropTypes.bool.isRequired,
-        onButtonClick:    React.PropTypes.func
+  sideBarMenus: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        label:           PropTypes.string.isRequired,
+        link:            PropTypes.string,
+        isDefaultActive: PropTypes.bool.isRequired,
+        onButtonClick:   PropTypes.func
       })
     ).isRequired
-  ).isRequired
+  ).isRequired,
+  classes: PropTypes.string.isRequired
 };
 
 export default SideBar;

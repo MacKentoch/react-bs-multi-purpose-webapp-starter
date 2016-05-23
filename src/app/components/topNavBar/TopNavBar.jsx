@@ -28,7 +28,6 @@ class TopNavBar extends Component {
               brand={navModel.brand}
             />
           </div>
-
           <div
             id="navbar"
             className="collapse navbar-collapse"
