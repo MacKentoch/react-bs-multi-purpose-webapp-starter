@@ -6,7 +6,13 @@ export const topNavBarModel = {
     placeHolder:  'rechercher...'
   },
 
-  leftNav:  [],
+  leftNav:  [
+    {
+      label:      'link0',
+      buttonLink: '/test',
+      type:       'iconMenu'
+    }
+  ],
 
   rightNav: [
     {

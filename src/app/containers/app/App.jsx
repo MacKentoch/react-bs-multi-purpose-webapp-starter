@@ -22,7 +22,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TopNavBar navModel={this.state.topNavBarModel} />
+        <TopNavBar
+          navModel={this.state.topNavBarModel}
+          toggleSideMenu={(e)=>this.toggleSideMenu(e)}
+        />
         <PageContainer>
           <SideBar sideBarMenus={this.state.leftSideBarModel} />
           <Main>
@@ -31,6 +34,11 @@ class App extends Component {
         </PageContainer>
       </div>
     );
+  }
+
+  toggleSideMenu(event) {
+    event.preventDefault();
+    console.info('shluld toggle menu');
   }
 }
 

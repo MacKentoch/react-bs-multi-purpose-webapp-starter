@@ -8,7 +8,6 @@ import LeftNav              from './leftNav/LeftNav.jsx';
 import SearchForm           from './searchForm/SearchForm.jsx';
 
 class TopNavBar extends Component {
-
   handlesSubmitSearch(value) {
     console.info(`searching value = ${value}`);
   }
@@ -19,14 +18,16 @@ class TopNavBar extends Component {
     const hasLeftNav    = navModel.leftNav  && navModel.leftNav.length  > 0;
     const hasRightNav   = navModel.rightNav && navModel.rightNav.length > 0;
 
-    const navbarStyle = `navbar ${navModel.inversedStyle ? 'navbar-inverse ' : ''} navbar-fixed-top`
+    const navbarStyle = `navbar ${navModel.inversedStyle ? 'navbar-inverse ' : ''} navbar-fixed-top`;
     return (
       <nav className={navbarStyle}>
         <div className="container-fluid">
-          <div className="navbar-header">
+          <div className="navbar-header col-sm-3 col-md-2">
             <HumburgerMenu />
-            <NavBarBrand brand={navModel.brand} />
-        </div>
+            <NavBarBrand
+              brand={navModel.brand}
+            />
+          </div>
 
           <div
             id="navbar"
@@ -36,6 +37,7 @@ class TopNavBar extends Component {
               hasLeftNav &&
               <LeftNav
                 leftNavModel={navModel.leftNav}
+                toggleSideMenu={(e)=>this.props.toggleSideMenu(e)}
               />
             }
             {
@@ -60,6 +62,7 @@ class TopNavBar extends Component {
 }
 
 TopNavBar.propTypes = {
+  toggleSideMenu: React.PropTypes.func,
   navModel: React.PropTypes.shape({
     brand:      React.PropTypes.string,
 
@@ -74,7 +77,7 @@ TopNavBar.propTypes = {
       React.PropTypes.shape({
         // common
         label:          React.PropTypes.string.isRequired,
-        type:           React.PropTypes.oneOf(['button', 'dropdown']).isRequired,
+        type:           React.PropTypes.oneOf(['button', 'dropdown', 'iconMenu']).isRequired,
         // button
         buttonLink:     React.PropTypes.string,
         onButtonClick:  React.PropTypes.func,
@@ -94,7 +97,7 @@ TopNavBar.propTypes = {
       React.PropTypes.shape({
         // common
         label:          React.PropTypes.string.isRequired,
-        type:           React.PropTypes.oneOf(['button', 'dropdown']).isRequired,
+        type:           React.PropTypes.oneOf(['button', 'dropdown', 'iconMenu']).isRequired,
         // button
         buttonLink:     React.PropTypes.string,
         onButtonClick:  React.PropTypes.func,

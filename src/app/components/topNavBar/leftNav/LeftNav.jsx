@@ -1,8 +1,9 @@
 'use strict';
 
-import React        from 'react';
-import MenuButton   from '../menuButton/MenuButton.jsx';
-import DropDownMenu from '../dropDownMenu/DropDownMenu.jsx';
+import React                  from 'react';
+import MenuButton             from '../menuButton/MenuButton.jsx';
+import DropDownMenu           from '../dropDownMenu/DropDownMenu.jsx';
+import ShowHideSideBarButton  from '../showHideSideBarButton/ShowHideSideBarButton.jsx';
 
 const LeftNav = (props) => {
   return (
@@ -29,6 +30,15 @@ const LeftNav = (props) => {
                 />
               );
             }
+            if (menu.type === 'iconMenu') {
+              return (
+                <ShowHideSideBarButton
+                  key={'iconMenu-' + menuIndex}
+                  label={menu.label}
+                  onMenuClick={() => props.toggleSideMenu()}
+                />
+              );
+            }
             return null;
           }
         )
@@ -42,7 +52,7 @@ LeftNav.propTypes = {
     React.PropTypes.shape({
       // commun
       label:          React.PropTypes.string.isRequired,
-      type:           React.PropTypes.oneOf(['button', 'dropdown']).isRequired,
+      type:           React.PropTypes.oneOf(['button', 'dropdown', 'iconMenu']).isRequired,
       // button
       buttonLink:     React.PropTypes.string,
       onButtonClick:  React.PropTypes.func,
@@ -56,7 +66,8 @@ LeftNav.propTypes = {
         })
       )
     })
-  ).isRequired
+  ).isRequired,
+  toggleSideMenu: React.PropTypes.func
 };
 
 export default LeftNav;
